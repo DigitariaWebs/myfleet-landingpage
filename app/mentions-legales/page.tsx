@@ -5,90 +5,100 @@ import { LegalPage, LegalSection } from "../components/LegalPage";
 export const metadata: Metadata = {
   title: "Mentions légales",
   description:
-    "Mentions légales de MyFleet : éditeur du site, hébergeur, propriété intellectuelle et coordonnées de contact.",
+    "Mentions légales de MyFleet, service exploité par Allure Limousine SA (Chavannes-de-Bogis, Suisse) : éditeur, hébergeur, propriété intellectuelle et contact.",
   alternates: { canonical: "/mentions-legales" },
 };
+
+// ⚠️ À COMPLÉTER avant la mise en ligne — valeurs en attente du client (Ahmed) :
+//   - CAPITAL : montant exact du capital-actions (SA ⇒ ≥ CHF 100'000).
+//   - TVA     : n° TVA si assujetti (sinon retirer la ligne TVA).
+//   - EMAIL   : adresse de contact à créer (Impressum + support + données).
+// Le reste (identité, IDE, RC, administrateur, hébergeur) est renseigné.
+const CAPITAL = "à compléter";
+const TVA = "à compléter"; // format si assujetti : « CHE-399.675.906 TVA »
+const CONTACT_EMAIL = "à compléter";
 
 export default function MentionsLegalesPage() {
   return (
     <LegalPage
       eyebrow="Informations légales"
       title="Mentions légales"
-      intro="Les présentes mentions légales encadrent l'utilisation du site myfleetagency.com, édité par la société MyFleet. Nous vous invitons à les lire attentivement."
-      lastUpdated="13 juin 2026"
+      intro="Les présentes mentions légales encadrent l'utilisation du site myfleetagency.com et de l'application MyFleet, exploités par Allure Limousine SA. Nous vous invitons à les lire attentivement."
+      lastUpdated="6 juillet 2026"
     >
-      <LegalSection title="Éditeur du site">
+      <LegalSection title="Éditeur">
+        <p>Le site myfleetagency.com et l'application MyFleet sont exploités par&nbsp;:</p>
         <p>
-          Le site myfleetagency.com est édité par&nbsp;:
+          <strong>Allure Limousine SA</strong>
+          <br />
+          Forme juridique&nbsp;: société anonyme (SA)
+          <br />
+          Siège social&nbsp;: chemin des Chalets 5, 1279 Chavannes-de-Bogis (VD), Suisse
+          <br />
+          N° IDE&nbsp;: CHE-399.675.906
+          <br />
+          Registre du commerce&nbsp;: inscrite au Registre du commerce du canton de Vaud (n°&nbsp;CH-621.3.008.895-7)
+          <br />
+          Capital-actions&nbsp;: {CAPITAL}
+          <br />
+          Administrateur / responsable de la publication&nbsp;: Ahmed Dardari
         </p>
-        {/* TODO: Renseigner la raison sociale exacte (ex. MyFleet SAS) */}
-        {/* TODO: Renseigner la forme juridique et le capital social */}
-        {/* TODO: Renseigner l'adresse du siège social */}
-        {/* TODO: Renseigner le numéro SIREN / SIRET */}
-        {/* TODO: Renseigner le numéro de TVA intracommunautaire */}
-        {/* TODO: Renseigner le numéro RCS et la ville d'immatriculation */}
-        {/* TODO: Renseigner le nom du directeur de la publication */}
         <p>
-          MyFleet — Société par actions simplifiée
-          <br />
-          Adresse&nbsp;: {/* TODO: adresse complète du siège social */} à compléter
-          <br />
-          SIREN&nbsp;: {/* TODO: SIREN */} à compléter — RCS&nbsp;: {/* TODO: RCS + ville */} à compléter
-          <br />
-          Capital social&nbsp;: {/* TODO: capital social */} à compléter
-          <br />
-          TVA intracommunautaire&nbsp;: {/* TODO: n° TVA */} à compléter
-          <br />
-          Directeur de la publication&nbsp;: {/* TODO: nom du directeur de la publication */} à compléter
+          «&nbsp;MyFleet&nbsp;» est un service de gestion et de location de flotte
+          automobile exploité par Allure Limousine SA.
         </p>
+      </LegalSection>
+
+      <LegalSection title="TVA">
+        <p>Numéro de TVA&nbsp;: {TVA}</p>
       </LegalSection>
 
       <LegalSection title="Contact">
         <p>
-          Pour toute question relative au site ou à nos services, vous pouvez nous
-          contacter à l&apos;adresse suivante&nbsp;:
+          Pour toute question relative au site, à l&apos;application ou à nos
+          services&nbsp;:
         </p>
-        {/* TODO: Renseigner l'adresse e-mail de contact officielle */}
-        {/* TODO: Renseigner un numéro de téléphone si applicable */}
-        <p>E-mail&nbsp;: {/* TODO: email de contact */} à compléter</p>
+        <p>E-mail&nbsp;: {CONTACT_EMAIL}</p>
       </LegalSection>
 
       <LegalSection title="Hébergement">
-        <p>Le site est hébergé par&nbsp;:</p>
-        {/* TODO: Renseigner le nom de l'hébergeur (ex. Vercel Inc.) */}
-        {/* TODO: Renseigner l'adresse de l'hébergeur */}
-        {/* TODO: Renseigner les coordonnées de contact de l'hébergeur */}
         <p>
-          {/* TODO: nom de l'hébergeur */} à compléter
+          Le site et l&apos;application sont hébergés par des prestataires
+          d&apos;infrastructure&nbsp;:
+        </p>
+        <p>
+          Site web&nbsp;: <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis.
           <br />
-          Adresse&nbsp;: {/* TODO: adresse de l'hébergeur */} à compléter
+          Backend&nbsp;: <strong>Railway Corp.</strong>, États-Unis.
+          <br />
+          Base de données et stockage&nbsp;: <strong>Supabase, Inc.</strong>, États-Unis.
         </p>
       </LegalSection>
 
       <LegalSection title="Propriété intellectuelle">
         <p>
-          L&apos;ensemble des éléments composant le site myfleetagency.com (marque,
-          logo, textes, visuels, interfaces, code et bases de données) est la
-          propriété exclusive de MyFleet ou de ses partenaires, et est protégé par
-          les lois en vigueur relatives à la propriété intellectuelle.
+          L&apos;ensemble des éléments composant le site et l&apos;application MyFleet
+          (marque, logo, textes, visuels, interfaces, code et bases de données) est la
+          propriété exclusive d&apos;Allure Limousine SA ou de ses partenaires, et est
+          protégé par les lois en vigueur relatives à la propriété intellectuelle.
         </p>
         <p>
-          Toute reproduction, représentation, modification ou exploitation, totale
-          ou partielle, de ces éléments sans l&apos;autorisation écrite préalable de
-          MyFleet est interdite et constitue une contrefaçon.
+          Toute reproduction, représentation, modification ou exploitation, totale ou
+          partielle, de ces éléments sans l&apos;autorisation écrite préalable
+          d&apos;Allure Limousine SA est interdite.
         </p>
       </LegalSection>
 
       <LegalSection title="Responsabilité">
         <p>
-          MyFleet met tout en œuvre pour fournir des informations exactes et à jour
-          sur ce site. Pour autant, nous ne saurions garantir l&apos;exactitude,
+          Allure Limousine SA met tout en œuvre pour fournir des informations exactes et
+          à jour. Pour autant, elle ne saurait garantir l&apos;exactitude,
           l&apos;exhaustivité ou l&apos;actualité des informations diffusées. Votre
-          utilisation du site se fait sous votre entière responsabilité.
+          utilisation du site et de l&apos;application se fait sous votre responsabilité.
         </p>
       </LegalSection>
 
-      <LegalSection title="Données personnelles et cookies">
+      <LegalSection title="Protection des données et cookies">
         <p>
           Le traitement de vos données personnelles est détaillé dans notre{" "}
           <Link className="text-primary underline underline-offset-4" href="/confidentialite">
@@ -102,11 +112,12 @@ export default function MentionsLegalesPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="Droit applicable">
+      <LegalSection title="Droit applicable et for">
         <p>
-          Les présentes mentions légales sont régies par le droit français. En cas
-          de litige, et à défaut de résolution amiable, compétence est attribuée aux
-          tribunaux français compétents.
+          Les présentes mentions légales sont régies par le <strong>droit suisse</strong>.
+          Dans la mesure permise par la loi, le for exclusif est au siège d&apos;Allure
+          Limousine SA, à Chavannes-de-Bogis (canton de Vaud), sous réserve d&apos;un for
+          impératif prévu par la loi.
         </p>
       </LegalSection>
     </LegalPage>
