@@ -9,9 +9,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/confidentialite" },
 };
 
-// ⚠️ À COMPLÉTER avant la mise en ligne : adresse e-mail de contact « données »
-// (à créer par le client — la même que l'Impressum).
-const CONTACT_EMAIL = "à compléter";
+// Adresse de contact « données », identique à celle de l'Impressum.
+const CONTACT_EMAIL = "info@allure-limousine.com";
 
 export default function ConfidentialitePage() {
   return (

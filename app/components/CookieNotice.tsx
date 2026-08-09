@@ -13,11 +13,21 @@ export function CookieNotice() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    try {
-      if (!localStorage.getItem(STORAGE_KEY)) setVisible(true);
-    } catch {
-      // localStorage unavailable (private mode etc.) — stay hidden.
-    }
+    // Deferred to a microtask rather than set synchronously: reading
+    // localStorage has to happen client-side after mount, and setting state
+    // inline in the effect triggers a cascading re-render before paint.
+    let cancelled = false;
+    void Promise.resolve().then(() => {
+      if (cancelled) return;
+      try {
+        if (!localStorage.getItem(STORAGE_KEY)) setVisible(true);
+      } catch {
+        // localStorage unavailable (private mode etc.) — stay hidden.
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   if (!visible) return null;

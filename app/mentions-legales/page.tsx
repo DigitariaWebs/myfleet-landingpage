@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/mentions-legales" },
 };
 
-// ⚠️ À COMPLÉTER avant la mise en ligne — valeurs en attente du client (Ahmed) :
-//   - CAPITAL : montant exact du capital-actions (SA ⇒ ≥ CHF 100'000).
-//   - TVA     : n° TVA si assujetti (sinon retirer la ligne TVA).
-//   - EMAIL   : adresse de contact à créer (Impressum + support + données).
-// Le reste (identité, IDE, RC, administrateur, hébergeur) est renseigné.
-const CAPITAL = "à compléter";
-const TVA = "à compléter"; // format si assujetti : « CHE-399.675.906 TVA »
-const CONTACT_EMAIL = "à compléter";
+// Le droit suisse (LCD art. 3 al. 1 let. s) exige, pour une offre commerciale
+// en ligne, l'identité de l'exploitant et une adresse de contact incluant un
+// e-mail — tout cela figure ci-dessous.
+//
+// Volontairement omis :
+//   - Capital-actions : non exigé sur un site web. Le droit suisse impose que,
+//     s'il est mentionné, il le soit intégralement (souscrit ET libéré) ; une
+//     mention partielle serait pire qu'une absence de mention.
+//   - Numéro de TVA : obligatoire sur les factures, pas sur un site web.
+//     À ajouter ici uniquement si la société est assujettie et souhaite
+//     l'afficher (format « CHE-399.675.906 TVA »).
+const CONTACT_EMAIL = "info@allure-limousine.com";
 
 export default function MentionsLegalesPage() {
   return (
@@ -27,7 +31,10 @@ export default function MentionsLegalesPage() {
       lastUpdated="6 juillet 2026"
     >
       <LegalSection title="Éditeur">
-        <p>Le site myfleetagency.com et l'application MyFleet sont exploités par&nbsp;:</p>
+        <p>
+          Le site myfleetagency.com et l&apos;application MyFleet sont exploités
+          par&nbsp;:
+        </p>
         <p>
           <strong>Allure Limousine SA</strong>
           <br />
@@ -39,8 +46,6 @@ export default function MentionsLegalesPage() {
           <br />
           Registre du commerce&nbsp;: inscrite au Registre du commerce du canton de Vaud (n°&nbsp;CH-621.3.008.895-7)
           <br />
-          Capital-actions&nbsp;: {CAPITAL}
-          <br />
           Administrateur / responsable de la publication&nbsp;: Ahmed Dardari
         </p>
         <p>
@@ -49,16 +54,17 @@ export default function MentionsLegalesPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="TVA">
-        <p>Numéro de TVA&nbsp;: {TVA}</p>
-      </LegalSection>
-
       <LegalSection title="Contact">
         <p>
           Pour toute question relative au site, à l&apos;application ou à nos
           services&nbsp;:
         </p>
-        <p>E-mail&nbsp;: {CONTACT_EMAIL}</p>
+        <p>
+          E-mail&nbsp;:{" "}
+          <a className="underline" href={`mailto:${CONTACT_EMAIL}`}>
+            {CONTACT_EMAIL}
+          </a>
+        </p>
       </LegalSection>
 
       <LegalSection title="Hébergement">
