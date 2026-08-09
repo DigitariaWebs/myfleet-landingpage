@@ -76,7 +76,7 @@ export function PairActions({ agencyId }: { agencyId: string }) {
         </p>
       )}
 
-      <div className="mt-10 rounded-2xl border border-black/10 bg-black/[0.03] p-6">
+      <div className="mt-10 rounded-2xl border border-black/10 bg-black/3 p-6">
         <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">
           Code de votre agence
         </p>
