@@ -23,12 +23,12 @@ export const CLIENT_APP_SCHEME = "myfleet";
 /**
  * Whether the renter app can handle `myfleet://pair/<id>`.
  *
- * FALSE until the app ships a matching route. Today `client/app/` has no
- * `pair/[id]` screen and no `+not-found` handler, so following the deep link
- * would open the app onto an unmatched route — worse than not offering it.
- * Flip to true in the same release that adds the screen.
+ * TRUE since my-fleet-mobile#24 added `app/pair/[id].tsx`, which runs the same
+ * pairing mutation as the scan screen, plus an `+not-found` route the app had
+ * always lacked. Safe to enable before the apps are published: the first
+ * released build necessarily contains that route.
  */
-export const CLIENT_APP_DEEPLINK_READY = false;
+export const CLIENT_APP_DEEPLINK_READY = true;
 
 /**
  * Renter app store listings. Both null until the apps are published; the
