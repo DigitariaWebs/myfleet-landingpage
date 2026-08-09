@@ -18,8 +18,14 @@ import { PairActions } from "./PairActions";
  * the page stays generic rather than guessing at the agency.
  */
 
-const UUID_RE =
-  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+/**
+ * Agency ids are NOT uuids. Production carries a mix: most are minted as
+ * `agency_<12 hex>` (e.g. agency_8fede692fb6c) while a few legacy rows are
+ * real uuids. So this validates the shape conservatively — a safe identifier
+ * charset and a sane length — rather than pinning a format that would 404
+ * every genuine agency.
+ */
+const AGENCY_ID_RE = /^[A-Za-z0-9_-]{6,64}$/;
 
 export const metadata: Metadata = {
   title: "Associer votre agence",
@@ -37,8 +43,8 @@ export default async function PairPage({
 }) {
   const { id } = await params;
 
-  // Anything that is not an agency id is a mistyped or corrupted scan.
-  if (!UUID_RE.test(id)) notFound();
+  // Anything outside the identifier charset is a mistyped or corrupted scan.
+  if (!AGENCY_ID_RE.test(id)) notFound();
 
   return (
     <main className="min-h-screen bg-background text-on-background flex items-center justify-center px-6 py-24">
