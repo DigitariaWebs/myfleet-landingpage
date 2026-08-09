@@ -14,15 +14,16 @@ export default function CguPage() {
     <LegalPage
       eyebrow="Conditions d'utilisation"
       title="Conditions générales d'utilisation"
-      intro="Les présentes conditions générales d'utilisation (CGU) définissent les modalités d'accès et d'utilisation du site myfleetagency.com et des services proposés par MyFleet. En accédant au site, vous reconnaissez en avoir pris connaissance et les accepter."
-      lastUpdated="13 juin 2026"
+      intro="Les présentes conditions générales d'utilisation (CGU) définissent les modalités d'accès et d'utilisation du site myfleetagency.com et des services MyFleet, exploités par Allure Limousine SA. En accédant au site, vous reconnaissez en avoir pris connaissance et les accepter."
+      lastUpdated="6 juillet 2026"
     >
       <LegalSection title="Objet">
         <p>
-          Les présentes CGU ont pour objet de définir les conditions dans lesquelles
-          MyFleet met à disposition son site et présente ses services destinés aux
-          agences de location automobile, ainsi que les engagements réciproques de
-          MyFleet et de l&apos;utilisateur.
+          «&nbsp;MyFleet&nbsp;» désigne le service exploité par Allure Limousine SA. Les
+          présentes CGU ont pour objet de définir les conditions dans lesquelles MyFleet
+          met à disposition son site et présente ses services destinés aux agences de
+          location automobile, ainsi que les engagements réciproques de MyFleet et de
+          l&apos;utilisateur.
         </p>
       </LegalSection>
 
@@ -100,9 +101,10 @@ export default function CguPage() {
 
       <LegalSection title="Droit applicable et litiges">
         <p>
-          Les présentes CGU sont soumises au droit français. En cas de litige, et à
-          défaut de résolution amiable, les tribunaux français seront seuls
-          compétents.
+          Les présentes CGU sont soumises au <strong>droit suisse</strong>. En cas de
+          litige, et à défaut de résolution amiable, le for exclusif est au siège
+          d&apos;Allure Limousine SA, à Chavannes-de-Bogis (canton de Vaud), sous réserve
+          d&apos;un for impératif prévu par la loi.
         </p>
       </LegalSection>
     </LegalPage>

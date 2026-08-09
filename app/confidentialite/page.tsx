@@ -5,135 +5,166 @@ import { LegalPage, LegalSection } from "../components/LegalPage";
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
   description:
-    "Politique de confidentialité de MyFleet : quelles données nous collectons, pourquoi, combien de temps nous les conservons et comment exercer vos droits (RGPD).",
+    "Politique de confidentialité de MyFleet (Allure Limousine SA) : données traitées, finalités, sous-traitants, transferts, durées et vos droits selon la nLPD suisse et le RGPD.",
   alternates: { canonical: "/confidentialite" },
 };
+
+// Adresse de contact « données », identique à celle de l'Impressum.
+const CONTACT_EMAIL = "info@allure-limousine.com";
 
 export default function ConfidentialitePage() {
   return (
     <LegalPage
       eyebrow="Protection des données"
       title="Politique de confidentialité"
-      intro="MyFleet accorde une grande importance à la protection de vos données personnelles. Cette politique vous explique quelles données nous traitons, dans quel but, et quels sont vos droits au titre du Règlement général sur la protection des données (RGPD)."
-      lastUpdated="13 juin 2026"
+      intro="Allure Limousine SA (« MyFleet ») accorde une grande importance à la protection de vos données. Cette politique explique quelles données nous traitons, dans quel but, avec quels prestataires, et quels sont vos droits selon la loi fédérale suisse sur la protection des données (nLPD) et, lorsqu'il s'applique, le Règlement général sur la protection des données de l'UE (RGPD)."
+      lastUpdated="6 juillet 2026"
     >
       <LegalSection title="Responsable du traitement">
         <p>
-          Le responsable du traitement des données collectées sur le site
-          myfleetagency.com est la société MyFleet.
+          Le responsable du traitement est&nbsp;:
+          <br />
+          <strong>Allure Limousine SA</strong> — chemin des Chalets 5, 1279
+          Chavannes-de-Bogis (VD), Suisse — IDE&nbsp;CHE-399.675.906.
         </p>
-        {/* TODO: Renseigner la raison sociale et l'adresse du responsable de traitement */}
         <p>
-          MyFleet — {/* TODO: adresse du siège social */} à compléter
+          Pour toute question relative à vos données ou pour exercer vos droits&nbsp;:
+          e-mail {CONTACT_EMAIL}.
         </p>
       </LegalSection>
 
-      <LegalSection title="Délégué à la protection des données (DPO)">
-        <p>
-          Pour toute question relative au traitement de vos données ou pour exercer
-          vos droits, vous pouvez contacter notre délégué à la protection des
-          données&nbsp;:
-        </p>
-        {/* TODO: Renseigner le nom / l'adresse e-mail du DPO ou du contact RGPD */}
-        <p>E-mail&nbsp;: {/* TODO: email du DPO */} à compléter</p>
-      </LegalSection>
-
-      <LegalSection title="Données que nous collectons">
-        <p>Dans le cadre de l&apos;utilisation du site et de nos services, nous pouvons collecter&nbsp;:</p>
-        <ul className="list-disc pl-6 space-y-2">
+      <LegalSection title="Données que nous traitons">
+        <p>Selon votre rôle, nous traitons les catégories de données suivantes&nbsp;:</p>
+        <ul className="list-disc space-y-2 pl-6">
           <li>
-            <strong>Données d&apos;identification professionnelle</strong>&nbsp;: nom,
-            prénom, fonction, nom de l&apos;agence, adresse e-mail professionnelle,
-            numéro de téléphone.
+            <strong>Personnel de l&apos;agence</strong>&nbsp;: nom, prénom, adresse
+            e-mail, numéro de téléphone, rôle et identifiants de connexion.
           </li>
           <li>
-            <strong>Données de demande</strong>&nbsp;: informations que vous nous
-            transmettez via nos formulaires (demande de démonstration, contact).
+            <strong>Locataires (clients)</strong>&nbsp;: nom, prénom, date de naissance,
+            adresse e-mail, numéro de téléphone, et <strong>documents
+            d&apos;identité</strong> fournis pour la vérification (passeport ou carte
+            d&apos;identité et permis de conduire).
           </li>
           <li>
-            <strong>Données de navigation</strong>&nbsp;: données techniques et
-            statistiques collectées via des traceurs, dans les conditions décrites
-            dans notre{" "}
-            <Link className="text-primary underline underline-offset-4" href="/cookies">
-              politique de cookies
-            </Link>
-            .
+            <strong>Location et véhicule</strong>&nbsp;: réservations, contrats signés,
+            kilométrage, lieux de prise en charge et de restitution, et{" "}
+            <strong>photos d&apos;inspection du véhicule</strong> (avant/après location),
+            analysées le cas échéant par un outil de détection de dommages.
+          </li>
+          <li>
+            <strong>Paiements</strong>&nbsp;: montants, statut et références de
+            transaction. Les données de carte bancaire sont traitées directement par
+            notre prestataire de paiement et ne transitent pas par nos serveurs.
+          </li>
+          <li>
+            <strong>Données techniques et de localisation</strong>&nbsp;: données
+            d&apos;usage, journaux techniques, et — avec votre autorisation via
+            l&apos;application — l&apos;accès à l&apos;appareil photo, à la localisation
+            et à la photothèque, aux fins de la location et des inspections.
           </li>
         </ul>
       </LegalSection>
 
       <LegalSection title="Finalités et bases légales">
-        <p>Vos données sont traitées pour les finalités suivantes&nbsp;:</p>
-        <ul className="list-disc pl-6 space-y-2">
+        <p>Nous traitons ces données pour&nbsp;:</p>
+        <ul className="list-disc space-y-2 pl-6">
           <li>
-            répondre à vos demandes et organiser les démonstrations
-            (base&nbsp;: mesures précontractuelles et intérêt légitime)&nbsp;;
+            fournir le service, gérer les réservations, contrats, inspections et
+            paiements (<em>exécution du contrat</em>)&nbsp;;
           </li>
           <li>
-            gérer la relation commerciale et contractuelle
-            (base&nbsp;: exécution du contrat)&nbsp;;
+            vérifier l&apos;identité des locataires et prévenir la fraude
+            (<em>obligation légale / intérêt légitime</em>)&nbsp;;
           </li>
           <li>
-            améliorer le site et nos services, réaliser des mesures d&apos;audience
-            (base&nbsp;: consentement et/ou intérêt légitime)&nbsp;;
+            assurer la sécurité, la maintenance et l&apos;amélioration du service
+            (<em>intérêt légitime</em>)&nbsp;;
           </li>
           <li>
-            respecter nos obligations légales et réglementaires
-            (base&nbsp;: obligation légale).
+            répondre à vos demandes et respecter nos obligations légales
+            (<em>consentement / obligation légale</em>).
           </li>
+        </ul>
+        <p>
+          Le traitement repose sur les motifs justificatifs de la nLPD et, lorsque le
+          RGPD s&apos;applique, sur les bases de son article&nbsp;6.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Sous-traitants et destinataires">
+        <p>
+          Vos données sont accessibles au personnel habilité d&apos;Allure Limousine SA
+          et à des sous-traitants techniques agissant pour notre compte, tenus à la
+          confidentialité&nbsp;:
+        </p>
+        <ul className="list-disc space-y-2 pl-6">
+          <li><strong>Supabase, Inc.</strong> — hébergement de la base de données, authentification et stockage des fichiers.</li>
+          <li><strong>Stripe, Inc.</strong> — traitement des paiements et des abonnements.</li>
+          <li><strong>OpenAI</strong> — analyse des photos d&apos;inspection pour la détection de dommages.</li>
+          <li><strong>Resend</strong> — envoi des e-mails transactionnels.</li>
+          <li><strong>Sentry</strong> — surveillance technique et rapports d&apos;erreurs.</li>
+          <li><strong>Expo</strong> — envoi des notifications push mobiles.</li>
+          <li><strong>Vercel, Inc.</strong> et <strong>Railway Corp.</strong> — hébergement du site et du backend.</li>
         </ul>
       </LegalSection>
 
-      <LegalSection title="Destinataires des données">
+      <LegalSection title="Transferts à l'étranger">
         <p>
-          Vos données sont destinées aux services habilités de MyFleet. Elles
-          peuvent être communiquées à nos sous-traitants techniques (hébergement,
-          outils de gestion de la relation client, outils de mesure d&apos;audience),
-          agissant pour notre compte et soumis à des obligations de confidentialité.
+          Certains de ces prestataires sont situés en dehors de la Suisse et de
+          l&apos;Union européenne, notamment aux États-Unis. Ces transferts sont
+          encadrés par des garanties appropriées (clauses contractuelles types et/ou
+          mécanismes reconnus), conformément à la nLPD et au RGPD.
         </p>
-        {/* TODO: Lister les principaux sous-traitants / destinataires (hébergeur, CRM, analytics) si requis */}
-      </LegalSection>
-
-      <LegalSection title="Transferts hors de l'Union européenne">
-        <p>
-          Lorsque certaines données sont susceptibles d&apos;être transférées en
-          dehors de l&apos;Union européenne, nous nous assurons que des garanties
-          appropriées sont mises en place (clauses contractuelles types de la
-          Commission européenne ou mécanisme équivalent).
-        </p>
-        {/* TODO: Préciser les pays / mécanismes de transfert si des sous-traitants sont hors UE */}
       </LegalSection>
 
       <LegalSection title="Durée de conservation">
         <p>
-          Vos données sont conservées pour la durée strictement nécessaire aux
-          finalités pour lesquelles elles ont été collectées, puis archivées ou
-          supprimées conformément aux durées légales applicables.
+          Nous conservons vos données pour la durée nécessaire aux finalités
+          ci-dessus, puis les supprimons ou les anonymisons. Les données de location,
+          de contrat et de facturation sont conservées pendant la durée requise par les
+          obligations légales suisses (notamment la conservation comptable de dix ans).
         </p>
-        {/* TODO: Préciser les durées de conservation exactes par catégorie de données */}
       </LegalSection>
 
       <LegalSection title="Vos droits">
         <p>
-          Conformément au RGPD et à la loi Informatique et Libertés, vous disposez
-          des droits suivants sur vos données&nbsp;: droit d&apos;accès, de
-          rectification, d&apos;effacement, de limitation, d&apos;opposition, de
-          portabilité, et le droit de définir des directives relatives au sort de
-          vos données après votre décès.
+          Conformément à la nLPD et, le cas échéant, au RGPD, vous disposez des droits
+          d&apos;<strong>accès</strong>, de <strong>rectification</strong>, d&apos;
+          <strong>effacement</strong>, de <strong>limitation</strong>, d&apos;
+          <strong>opposition</strong> et de <strong>portabilité</strong> de vos données,
+          ainsi que du droit de retirer votre consentement à tout moment.
         </p>
         <p>
-          Vous pouvez exercer ces droits en contactant notre DPO (voir ci-dessus).
-          Vous disposez également du droit d&apos;introduire une réclamation auprès
-          de la Commission nationale de l&apos;informatique et des libertés (CNIL),
-          autorité de contrôle française.
+          Pour exercer ces droits, écrivez-nous à {CONTACT_EMAIL}. Vous pouvez également
+          saisir une autorité de contrôle&nbsp;: en Suisse, le{" "}
+          <strong>Préposé fédéral à la protection des données et à la transparence
+          (PFPDT)</strong>&nbsp;; dans l&apos;UE, l&apos;autorité de protection des
+          données de votre pays de résidence.
         </p>
       </LegalSection>
 
       <LegalSection title="Sécurité">
         <p>
-          MyFleet met en œuvre des mesures techniques et organisationnelles
-          appropriées afin de protéger vos données contre toute destruction, perte,
-          altération ou accès non autorisé.
+          Nous mettons en œuvre des mesures techniques et organisationnelles
+          appropriées (chiffrement en transit, contrôle des accès, cloisonnement par
+          agence) afin de protéger vos données contre la perte, l&apos;altération ou
+          l&apos;accès non autorisé.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Contact et mises à jour">
+        <p>
+          Cette politique peut être mise à jour&nbsp;; la date de dernière révision
+          figure en tête de page. Pour toute question, consultez aussi nos{" "}
+          <Link className="text-primary underline underline-offset-4" href="/mentions-legales">
+            mentions légales
+          </Link>{" "}
+          et notre{" "}
+          <Link className="text-primary underline underline-offset-4" href="/cookies">
+            politique de cookies
+          </Link>
+          .
         </p>
       </LegalSection>
     </LegalPage>

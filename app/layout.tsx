@@ -8,6 +8,7 @@ import {
   SITE_TITLE,
   SITE_URL,
 } from "./lib/site";
+import { CookieNotice } from "./components/CookieNotice";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -62,7 +63,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <CookieNotice />
+      </body>
     </html>
   );
 }
